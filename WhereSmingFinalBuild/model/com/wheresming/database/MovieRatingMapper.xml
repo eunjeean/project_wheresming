@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wheresming.movie.MovieRatingDAO">
+	<insert id="insertRating" parameterType="com.wheresming.movie.MovieRatingDTO">
+	INSERT INTO T_ETC(MV_SEQ, MB_ID, MB_NICK, ETC_LIKE, ETC_SCORE, ETC_DATE)
+	VALUES(#{mv_seq}, #{mb_id}, #{mb_nick}, NULL, #{rating}, SYSDATE)
+	</insert>
+	<select id="selectRatingNull" parameterType="com.wheresming.movie.MovieRatingDTO" 
+	resultType="String">
+	SELECT MB_NICK
+	FROM T_ETC
+	WHERE MB_NICK = #{mb_nick} AND MV_SEQ = #{mv_seq}
+	</select>
+	<select id="selectRatingAVG" parameterType="int" resultType="double">
+	SELECT AVG(ETC_SCORE)
+	FROM T_ETC
+	WHERE MV_SEQ = #{mv_seq}
+	</select>
+</mapper>

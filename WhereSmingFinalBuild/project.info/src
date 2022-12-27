@@ -1,0 +1,171 @@
+@ controller
+
+- com.wheresming.member : Member와 관련된 컨트롤러
+InfoEdit : 회원정보를 수정하는 컨트롤러
+Login : 로그인 기능을 담당하는 컨트롤러
+Logout : 로그아웃 기능을 담당하는 컨트롤러
+MyPage : 마이페이지로 가게 할 수 있는 기능을 담당하는 컨트롤러
+RemoveMember : 회원탈퇴를 담당하는 컨트롤러
+Singin : 회원가입을 담당하는 컨트롤러
+Update : 회원 정보 수정을 담당하는 컨트롤러
+
+- com.wheresming.movie : Movie와 관련된 컨트롤러
+MovieList : 무비리스트를 띄워주는 컨트롤러
+OttSite : OTT 사이트를 연결해주거나 연동시켜주는 컨트롤러
+Top50bottom : 메인페이지 하단 영화추천 컨트롤러
+
+- com.wheresming.pick : Pick과 관련된 컨트롤러
+AddPick : 페이지에서 pick을 추가하는 컨트롤러
+BestPickList : 베스트 픽 리스트를 띄워주는 컨트롤러
+CreatePickList : 픽 폴더를 생성해주는 컨트롤러
+DeletePick : 픽 취소를 담당하는 컨트롤러
+DropPickList : 픽 폴더를 삭제해주는 컨트롤러
+EditPickList : 픽 폴더 수정을 담당해주는 컨트롤러
+MyPickListViewer : 마이페이지 픽 리스트를 불러와주는 컨트롤러
+UploadPickList : 픽 폴더를 업로드 해주는 컨트롤러
+
+- com.wheresming.review : Review와 관련된 컨트롤러
+AddReview : 영화 리뷰를 등록해주는 컨트롤러
+Daum : 다음 리뷰를 불러와주는 컨트롤러
+DeleteReview : 리뷰 삭제를 담당하는 컨트롤러
+EditReview : 리뷰 수정을 담당하는 컨트롤러
+Naver : 네이버 리뷰를 불러와주는 컨트롤러
+ReviewViewer : wheresming 자체 리뷰들을 불러와주는 컨트롤러
+
+- com.wheresming.search : Search와 관련된 컨트롤러
+Searching : 영화 검색을 담당하는 컨트롤러
+
+@ model
+
+- com.wheresming.database : database 오라클 연동을 담당하는 Model
+SqlSessionManager : DAO에서 부를 SQL 세션매니저를 정의하고 구현하는 클래스
+Mappers.info : Mapper 작성 구문들의 설명을 작성할 문서
+MemberMapper : Member SQL Mapper를 작성하는 xml
+MovieMapper : Movie SQL Mapper를 작성하는 xml
+mybatis-config : 오라클 연동을 담당하는 xml
+PickListMapper : PickList SQL Mapper를 작성하는 xml
+ReviewMapper : Review SQL Mapper를 작성하는 xml
+SearchMapper : Search SQL Mapper를 작성하는 xml
+SQL.script : DB 내 테이블 접근에 관련한 SQL 실행문들을 정의하는 문서
+top50Mapper : 메인페이지 하단 영화추천 SQL xml
+
+- com.wheresming.member : Member와 관련된 Model
+InfoEditDAO : 회원정보 수정의 로직을 담당하는 클래스
+LoginDAO : 로그인의 로직을 담당하는 클래스
+LogoutDAO : 로그아웃 로직을 담당하는 클래스
+MemberDTO : 멤버 테이블의 객체를 생성하는 생성 클래스
+MyPageDAO : 마이페이지의 로직을 담당하는 클래스
+RemoveMemberDAO : 회원탈퇴의 로직을 담당하는 클래스
+SinginDAO : 회원가입의 로직을 담당하는 클래스
+
+- com.wheresming.movie : Movie와 관련된 Model
+MovieDTO : 무비 테이블의 객체를 생성하는 생성 클래스
+MovieListDAO : 무비 리스트 로직을 담당하는 클래스
+OttSiteDAO : OTT 사이트 연결의 로직을 담당하는 클래스
+Top50bottomDAO :메인페이지 하단 영화추천 로직을 담당하는 클래스
+
+- com.wheresming.pick : Pick과 관련된 Model
+AddPickDAO : 픽 추가와 관련된 로직을 담당하는 클래스
+BestPickListDAO : 베스트 픽 리스트와 관련된 로직을 담당하는 클래스
+CreatePickListDAO : 픽 생성과 관련된 로직을 담당하는 클래스
+DeletePickDAO : 픽 취소와 관련된 로직을 담당하는 클래스
+DropPickListDAO : 픽 폴더 삭제와 관련된 로직을 담당하는 클래스
+EditPickListDAO : 픽 폴더 수정과 관련된 로직을 담당하는 클래스
+PickListDTO : 픽 테이블의 객체를 생성하는 생성 클래스
+PickListViewerDAO : 픽 리스트를 불러오는 로직을 담당하는 클래스
+UploadPickListDAO : 픽 폴더를 업로드하는 로직을 담당하는 클래스
+
+- com.wheresming.review : Review와 관련된 Model
+AddReviewDAO : 리뷰 등록의 로직을 담당하는 클래스
+DaumDAO : 다음 리뷰를 불러오는 로직을 담당하는 클래스
+DeleteReviewDAO : 리뷰 삭제의 로직을 담당하는 클래스
+EditReviewDAO : 리뷰 수정의 로직을 담당하는 클래스
+NaverDAO : 네이버 리뷰를 불러오는 로직을 담당하는 클래스
+ReviewDTO : 리뷰 테이블의 객체를 생성하는 생성 클래스
+
+- com.wheresming.search
+SearchDTO : DB에서 있는 영화를 검색하는 것과 관련된 객체를 생성할 생성 클래스
+SearchingDAO : 검색과 관련된 로직을 담당하는 클래스
+SearchingCntDAO : 검색결과 갯수 체크하는 클래스
+
+
+@ testcase : 테스트 클래스를 생성하는 소스폴더
+- stub.name : 각자 클래스 본인 이름으로 생성
+- dummy : 사용 완료되거나 지우고 싶은 클래스 넣는 더미폴더
+
+추가되어 있는 Maven Dependencies(라이브러리) : OJDBC8, mybatis, JSTL, LOMBOK
+
+@project.info
+
+rule : 프로젝트 규칙 기술
+src : 프로젝트 전체 구조 기술
+
+@src
+
+- main
+- webapp
+- jsp
+
+- mainweb
+Main : wheresming의 메인페이지 jsp
+- release : Main의 릴리즈 jsp 파일을 보관하는 폴더
+
+- sub : 메인페이지 외 페이지 jsp를 보관하는 폴더
+Account : 로그인 회원가입을 담당하는 jsp
+Movie : Movie 클릭시 화면에 띄워줄 jsp
+WhereSmingPick : wheresming pick 페이지 jsp
+-release : 메인 외 릴리즈 jsp 파일을 보관하는 폴더
+
+- page
+- script
+Account : 로그인 회원가입 자바스크립트
+Main : 메인 페이지 자바스크립트
+Movie : 무비 페이지 자바스크립트
+script.info : 자바스크립트 관련된 주석이나 정보
+WhereSmingPick : wheresming pick 페이지의 자바스크립트
+
+- testcase : 페이지와 관련된 것들을 테스트하는 폴더
+driver.name : 페이지 테스트 진행을 위해 각자 이름 폴더에 복사해 작성
+dummy : 사용 완료되거나 삭제할 페이지문서 보관하는 곳
+
+- theme : 페이지 디자인 관련 파일 보관하는 폴더
+css : css 파일을 보관하는 폴더
+image : image 파일을 보관하는 폴더
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="com.wheresming.pick.PickDAO">
+	<insert id="createFolder" parameterType="com.wheresming.pick.PickListDTO">	
+	INSERT INTO t_wishlist (mv_seq, mb_nick, mb_id, open_yn, fd_name, fd_likes, fd_cdate) 
+	VALUES (NULL, #{mb_nick}, #{mb_id}, 'N', #{fd_name}, 0, sysdate)
+	</insert>
+	
+	<select id="folderViewer" parameterType="String" resultType="com.wheresming.pick.PickListViewerDTO">
+	SELECT MV_SEQ, MB_NICK, MB_ID, OPEN_YN, FD_NAME, FD_LIKES
+	FROM T_WISHLIST
+	WHERE MB_ID=#{mb_id} AND MV_SEQ IS NULL
+	</select>
+	
+	<insert id="addPick" parameterType="com.wheresming.pick.AddPickDTO">	
+	INSERT INTO t_wishlist (mv_seq, mb_nick, mb_id, open_yn, fd_name, fd_likes, fd_cdate) 
+	VALUES (#{mv_seq}, #{mb_nick}, #{mb_id}, 'N', #{fd_name}, 0, sysdate)
+	</insert>
+	
+	<select id="folderViewList" parameterType="String" resultType="com.wheresming.pick.PickListViewerDTO">
+	SELECT MV_SEQ, MB_NICK, OPEN_YN, FD_NAME, FD_LIKES
+	FROM T_WISHLIST
+	WHERE FD_NAME=#{fd_name} AND MV_SEQ IS NOT NULL
+	</select>
+	
+	<select id="mypicksImageList" parameterType="String" resultType="com.wheresming.pick.JoinDTO">
+		SELECT MV_IMAGE
+		  FROM T_MOVIE M
+		     , T_WISHLIST W 
+		 WHERE W.MV_SEQ = M.MV_SEQ
+		   AND FD_NAME = #{fd_name}
+	</select>
+	
+	
+</mapper>

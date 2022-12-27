@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wheresming.movie.MovieInfoDAO">
+	<select id="select" parameterType="com.wheresming.movie.MovieDTO" resultType="com.wheresming.movie.MovieDTO">
+		SELECT mv_nf, mv_wc, mv_tv, mv_title FROM T_MOVIE WHERE MV_SEQ=#{mv_seq}
+	</select>
+</mapper>

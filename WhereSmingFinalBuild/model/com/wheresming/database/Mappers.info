@@ -1,0 +1,51 @@
+@CommentMapper
+Mapper's Sequence number. 
+Mapper String.
+add info.
+
+@MemberMapper
+1. insert.
+insert into t_member values(#{mb_id},#{mb_pw},
+#{mb_nick},#{mb_email}#{mb_joindate},#{mb_type}).
+회원가입을 위한 메퍼 SQL문입니다.
+
+2. select.
+select name from t_member where mb_id=#{mb_id} and mb_pw=#{mb_pw}.
+로그인을 위한 매퍼 SQL문입니다.
+
+
+@SearchMapper
+3. insertSearch.
+insert into t_search(sr_word, sr_date, mb_id) values(#{sr_word}, sysdate,'boss').
+검색했을 시, t_search 테이블에 검색 정보를 저장하는 SQL문입니다.
+
+4. selectSearch.
+select * from t_movie where mv_title like #{%sr_word%}.
+검색했을 시, 검색어를 영화 정보(t_movie) 페이지로 연동해주는 SQL문입니다.
+	
+	검색은 insert문과 select문에 맞는 두 개의 dao를 실행 생각이므로 
+	insert > SearchDAO dao = new SearchDAO();
+	select > SearchDAO dao = new SearchDAO();
+	dao.insert();
+	dao.select();
+	
+예시와 같은 두 개의 객체 실행을 시도해보면 좋을 것 같습니다.
+
+
+@MovieMapper
+Mapper's Sequence number. 
+Mapper String.
+add info.
+
+@SearchMapper
+Mapper's Sequence number. 
+Mapper String.
+add info.
+
+@WishListMapper
+Mapper's Sequence number. 
+Mapper String.
+add info.
+
+@MovieInfoMapper
+영화정보(상영시간 및 줄거리)를 실시간 크롤링으로 가져옴

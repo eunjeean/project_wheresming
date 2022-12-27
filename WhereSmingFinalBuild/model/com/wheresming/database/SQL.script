@@ -1,0 +1,33 @@
+@CommentMapper
+Sequence number.
+script info.
+add script String.
+
+@MemberMapper
+1. [InfoEditDAO]
+update t_member set mb_pw=mb_pw, name=name where mb_id=mb_id.
+회원정보를 수정하는 업데이트문.
+
+2. [MemberDTO]
+insert into t_member values(mb_id, mb_pw, mb_nick,
+mb_email, mb_joindate, mb_type).
+회원가입하는 인서트문.
+
+3. [MemberDTO]
+select name from t_member where mb_id=mb_id and mb_pw=mb_pw.
+로그인하는 셀렉트문.
+
+@MovieMapper
+Sequence number.
+script info.
+add script String.
+
+@SearchMapper
+Sequence number.
+script info.
+add script String.
+
+@WishListMapper
+Sequence number.
+script info.
+add script String.

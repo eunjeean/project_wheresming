@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lnag="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Where?Sming 회원가입</title>
+        <link rel="stylesheet" href="new_main.css">
+        <style>
+
+
+
+
+#content {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 460px;
+}
+
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.background {
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  filter: blur(5px);
+  min-height: 800px;
+
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 500px;
+  margin: 10vh auto;
+  background: transparent;
+  box-shadow: 0 0 15px rgb(0, 0, 0);
+  border-radius: 25px;
+}
+h2 {
+  font-size: 30px;
+}
+
+form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+}
+.form-item {
+  display: flex;
+  width: 90%;
+  background: transparent;
+  margin: 10px auto;
+  border-radius: 15px;
+  align-items: center;
+  border-bottom: 1px solid rgb(82, 81, 81);
+}
+.form-item:hover {
+  border: 1px solid rgb(82, 81, 81);
+}
+input {
+  background: transparent;
+  width: 80%;
+  height: 30px;
+  outline: none;
+  border: none;
+  margin: auto;
+  color: white;
+  font-size: 17px;
+}
+
+span {
+  user-select: none;
+  margin: 5px;
+  color: rgb(172, 172, 172);
+  background: rgba(85, 81, 81, 0.637);
+  padding: 5px;
+  border-radius: 18px;
+}
+button[type="submit"] {
+  width: 180px;
+  font-size: 20px;
+  margin: 10px auto;
+  padding: 8px;
+  background: rgba(122, 123, 116, 0.72);
+  border: none;
+  color: white;
+}
+button[type="submit"]:hover {
+  background: rgba(222, 236, 34, 0.678);
+}
+p:first-of-type {
+  margin: 0;
+}
+.options {
+  display: flex;
+  margin: 10px auto;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+button {
+  font-size: 18px;
+  padding: 5px 16px;
+  margin: 5px 15px;
+  width: 180px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: all 0.7s ease;
+}
+.fb:hover {
+  background: rgba(55, 53, 207, 0.637);
+  border: none;
+  box-shadow: 0 0 2px rgba(55, 53, 207, 0.637);
+}
+.gl:hover {
+  background: rgba(207, 53, 53, 0.671);
+  border: none;
+  box-shadow: 0 0 2px rgba(207, 53, 53, 0.671);
+}
+
+p {
+  font-size: 18px;
+  margin: 5px;
+}
+a {
+  color: white;
+}
+a:hover {
+  color: grey;
+}
+
+@media screen and (max-width: 550px) {
+  .container {
+    width: 90%;
+  }
+}
+
+/* 입력폼 */
+
+
+h3 {
+    margin: 19px 0 8px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.box {
+    display: block;
+    width: 100%;
+    height: 51px;
+    border: solid 1px rgb(0, 0, 0);
+    padding: 10px 14px 10px 14px;
+    box-sizing: border-box;
+    background: rgb(119, 119, 119);
+    position: relative;
+}
+
+
+
+input {
+    font-family: Dotum,'돋움',Helvetica,sans-serif;    
+}
+
+.box.int_id {
+    padding-right: 110px;
+}
+
+.box.int_pass {
+    padding-right: 40px;
+}
+
+.box.int_pass_check {
+    padding-right: 40px;
+}
+
+.step_url {
+    /*@naver.com*/
+    position: absolute;
+    top: 16px;
+    right: 13px;
+    font-size: 15px;
+    color: #8e8e8e;
+}
+
+.pswdImg {
+    width: 18px;
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+
+
+
+select {
+    width: 100%;
+    height: 29px;
+    font-size: 15px;
+    background: #fff url(https://static.nid.naver.com/images/join/pc/sel_arr_2x.gif) 100% 50% no-repeat;
+    background-size: 20px 8px;
+    -webkit-appearance: none;
+    display: inline-block;
+    text-align: start;
+    border: none;
+    cursor: default;
+    font-family: Dotum,'돋움',Helvetica,sans-serif;
+}
+
+/* 에러메세지 */
+
+.error_next_box {
+    margin-top: 9px;
+    font-size: 12px;
+    color: red;    
+    display: none;
+}
+
+#alertTxt {
+    position: absolute;
+    top: 19px;
+    right: 38px;
+    font-size: 12px;
+    color: red;
+    display: none;
+}
+
+/* 버튼 */
+
+.btn_area {
+    margin: 30px 0 91px;
+    
+}
+
+#btnJoin {
+    width: 100%;
+    padding: 21px 0 17px;
+    border: 0;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight: 400;
+    font-family: Dotum,'돋움',Helvetica,sans-serif;
+}
+
+
+
+        </style>
+    </head>
+    <body>
+        <body>
+
+            <!-- for background -->
+            <div class="background"></div>
+          
+            <!-- for form container -->
+            <div class="container">
+              <h2>회원가입</h2>
+      
+            </div>
+          </body>
+
+        <!-- wrapper -->
+        <div id="wrapper">
+
+            <!-- content-->
+            <div id="content">
+
+                <!-- ID -->
+                <div>
+                    <h3 class="join_title">
+                        <label for="id">아이디</label>
+                    </h3>
+                    <span class="box int_id">
+                        <input type="text" id="id" class="int" maxlength="20">
+                    </span>
+                    <span class="error_next_box"></span>
+                </div>
+
+                <!-- PW1 -->
+                <div>
+                    <h3 class="join_title"><label for="pswd1">비밀번호</label></h3>
+                    <span class="box int_pass">
+                        <input type="password" id="pswd1" class="int" maxlength="20">
+                        <span id="alertTxt">사용불가</span>
+                        <img src="m_icon_pass.png" id="pswd1_img1" class="pswdImg">
+                    </span>
+                    <span class="error_next_box"></span>
+                </div>
+
+                <!-- PW2 -->
+                <div>
+                    <h3 class="join_title"><label for="pswd2">비밀번호 재확인</label></h3>
+                    <span class="box int_pass_check">
+                        <input type="password" id="pswd2" class="int" maxlength="20">
+                        <img src="m_icon_check_disable.png" id="pswd2_img1" class="pswdImg">
+                    </span>
+                    <span class="error_next_box"></span>
+                </div>
+
+                <!-- NAME -->
+                <div>
+                    <h3 class="join_title"><label for="name">닉네임</label></h3>
+                    <span class="box int_name">
+                        <input type="text" id="name" class="int" maxlength="20">
+                    </span>
+                    <span class="error_next_box"></span>
+                </div>
+
+   
+                <!-- EMAIL -->
+                <div>
+                    <h3 class="join_title"><label for="email">본인확인 이메일<span class="optional"></span></label></h3>
+                    <span class="box int_email">
+                        <input type="text" id="email" class="int" maxlength="100" placeholder="">
+                    </span>
+                    <span class="error_next_box">이메일 주소를 다시 확인해주세요.</span>    
+                </div>
+
+                <!-- MOBILE -->
+                <div>
+                    <h3 class="join_title"><label for="phoneNo">휴대전화</label></h3>
+                    <span class="box int_mobile">
+                        <input type="tel" id="mobile" class="int" maxlength="16" placeholder="전화번호 입력">
+                    </span>
+                    <span class="error_next_box"></span>    
+                </div>
+
+
+                <!-- JOIN BTN-->
+                <div class="btn_area">
+                    <button type="button" id="btnJoin">
+                        <a href="index.html"><span>가입하기</span></a>
+                    </button>
+                </div>
+
+                
+
+            </div> 
+            <!-- content-->
+
+        </div> 
+        <!-- wrapper -->
+    <script src="main.js"></script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+   
+
